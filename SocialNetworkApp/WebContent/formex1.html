@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Form examples</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+<div ng-app="">
+<form name="myForm">
+
+<p>Name:<input type="myName" ng-model="myName" required>
+<span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The field is requried</span></p>
+
+<p>Email:<input type="myName" ng-model="myName" required>
+<span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The field is requried</span></p>
+
+<button type="submit">Submit</button>
+</form>
+</div>
+</body>
+</html>

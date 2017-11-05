@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Form page</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<body>
+<div ng-app="myApp" ng-controller="formcontroller">
+  <form>
+    <b>First Name</b>:<input type="text" ng-model="user.firstName"><br><br>
+   <b> Last Name </b>:<input type="text" ng-model="user.lastName"> <br><br>
+    <button type="reset">RESET</button>
+  </form>
+  <p>form = {{user}}</p>
+  <p>master = {{master}}</p>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('formcontroller', function($scope) {
+    $scope.master = {firstName:"Swetha", lastName:"Shetti"};
+    $scope.reset = function() {
+        $scope.user = angular.copy($scope.master);
+    };
+    $scope.reset();
+});
+
+</script>
+</body>
+</html>
